@@ -8,7 +8,91 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <h1 class="title">Storage pricing</h1>
+  <div class="container">
+    <div class="price-form">
+      <div class="price-form__item item">
+        <div class="item__description">
+          <p class="item__name">Storage:</p>
+          <span class="item__number">100 GB</span>
+        </div>
+        <input type="range" class="item__input" min="0" max="1000" step="1" value="100">
+      </div>
+      <div class="price-form__item item">
+        <div class="item__description">
+          <p class="item__name">Transfer:</p>
+          <span class="item__number">400 GB</span>
+        </div>
+        <input type="range" class="item__input" min="0" max="1000" step="1" value="400">
+      </div>
+    </div>
+    <div class="price-result">
+      <div class="logos">
+        <div class="company">
+          <div class="company__name">
+            <h3 class="company__name-item">backblaze</h3>
+          </div>
+          <div class="company__logo">
+            <img src="img/backblaze.png" alt="backblaze" class="company__logo-image">
+          </div>
+        </div>
+        <div class="company">
+          <div class="company__name">
+            <h3 class="company__name-item">bunny</h3>
+            <div class="company__name-input">
+              <input type="radio" id="HDD" name="storage-type" value="HDD" checked>
+              <label for="HDD">HDD</label>
+              <input type="radio" id="SSD" name="storage-type" value="SSD">
+              <label for="SSD">SSD</label>
+            </div>
+          </div>
+          <div class="company__logo">
+            <img src="img/bunny.jfif" alt="bunny" class="company__logo-image">
+          </div>
+        </div>
+        <div class="company">
+          <div class="company__name">
+            <h3 class="company__name-item">scaleway</h3>
+            <div class="company__name-input">
+              <input type="radio" id="multi" name="type" value="multi">
+              <label for="multi">Multi</label>
+              <input type="radio" id="single" name="type" value="single" checked>
+              <label for="single">Single</label>
+            </div>
+          </div>
+          <div class="company__logo">
+            <img src="img/scaleway.png" alt="scaleway" class="company__logo-image">
+          </div>
+        </div>
+        <div class="company">
+          <div class="company__name">
+            <h3 class="company__name-item"> vultr</h3>
+          </div>
+          <div class="company__logo">
+            <img src="img/vultr.png" alt=" vultr" class="company__logo-image">
+          </div>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="chart__item">
+          <div class="chart__graph"></div>
+          <span class="chart__item-price">5$</span>
+        </div>
+        <div class="chart__item">
+          <div class="chart__graph"></div>
+          <span class="chart__item-price">6$</span>
+        </div>
+        <div class="chart__item">
+          <div class="chart__graph"></div>
+          <span class="chart__item-price">3$</span>
+        </div>
+        <div class="chart__item">
+          <div class="chart__graph"></div>
+          <span class="chart__item-price">8$</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

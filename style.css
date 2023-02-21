@@ -1,4 +1,106 @@
 body {
-  background: rgb(0,3,36);
-  background: linear-gradient(90deg, rgba(0,3,36,0.7651435574229692) 0%, rgba(9,94,121,0.6446953781512605) 40%, rgba(255,196,0,1) 100%);
+  margin: 0;
+  background-color: #1e213f;
+  color: #d7e0ff;
+}
+p {
+  margin: 0;
+  font-size: 20px;
+}
+.title {
+  margin: 0;
+  padding: 50px 0;
+  text-align: center;
+}
+.container {
+  margin: 0 auto;
+  padding: 20px 40px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #272c5a;
+}
+.price-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.item {
+  width: 40%;
+}
+.item__description {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item__input {
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+.item__input::before {
+  content: '1GB';
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  color: #d7e0ff;
+}
+.item__input::after {
+  content: '1000GB';
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  color: #d7e0ff;
+}
+.price-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logos {
+  width: 30%;
+}
+.company {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.company__name-item {
+  margin: 0;
+}
+.company__logo {
+  width: 32px;
+  height: 32px;
+}
+.company__logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.company__name-input label {
+  font-size: 12px;
+}
+.chart {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 228px;
+}
+.chart__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+}
+.chart__graph {
+  height: 25px;
+  background-color: #747e9f;
+  width: 200px;
+}
+.chart__item-price {
+  padding: 0 10px;
+  color: #d7e0ff;
 }
