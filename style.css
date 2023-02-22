@@ -83,8 +83,13 @@ input {
   height: 100%;
   object-fit: contain;
 }
+.company__name-input {
+  display: flex;
+  align-items: center;
+}
 .company__name-input label {
   font-size: 12px;
+  padding: 0 10px 0 5px;
 }
 .chart {
   display: flex;
@@ -93,6 +98,7 @@ input {
   height: 228px;
 }
 .chart__item {
+  margin: 0;
   display: flex;
   align-items: center;
   width: 100%;
@@ -106,4 +112,7 @@ input {
 .chart__item-price {
   padding: 0 10px;
   color: #d7e0ff;
+}
+#myChart {
+  transform: rotate(90deg);
 }

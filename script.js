@@ -7,7 +7,10 @@ const storageNumber = document.querySelector('.item__number-storage'),
   scPrice = document.getElementById('sc-price'),
   vlPrice = document.getElementById('vl-price'),
   bnInput = document.querySelector('.bn-input'),
-  scInput = document.querySelector('.sc-input');
+  scInput = document.querySelector('.sc-input'),
+  chartGraphs = document.querySelectorAll('.chart__graph');
+
+let a = 0, b = 0, c = 0, d = 0;
 
 const checkStorageValue = () => {
   storageNumber.innerHTML = storageInput.value;
@@ -23,8 +26,10 @@ const calculateBb = () => {
 
   if (newPrice > minPrice) {
     bbPrice.innerHTML = newPrice;
+    a = newPrice;
   } else {
     bbPrice.innerHTML = minPrice.toFixed(2);
+    a = minPrice;
   }
 }
 
@@ -36,8 +41,10 @@ const calculateBn = () => {
 
   if (newPrice > maxPrice) {
     bnPrice.innerHTML = maxPrice.toFixed(2);
+    b = maxPrice.toFixed(2);
   } else {
     bnPrice.innerHTML = newPrice;
+    b = newPrice;
   }
 }
 
@@ -62,6 +69,13 @@ const calculateSc = () => {
 
   newPrice = ((storageInput.value - 75) * newSelected + (transferInput.value - 75) * transferValue).toFixed(2);
   scPrice.innerHTML = newPrice;
+
+  if (newPrice > 0) {
+    c = newPrice;
+  } else {
+    c = 0;
+  }
+
 }
 
 const calculateVl = () => {
@@ -70,9 +84,64 @@ const calculateVl = () => {
 
   if (newPrice > minPrice) {
     vlPrice.innerHTML = newPrice;
+    d = newPrice;
   } else {
     vlPrice.innerHTML = minPrice.toFixed(2);
+    d = minPrice;
   }
+}
+
+const createChart = () => {
+  const graphA = document.querySelector('.chart__graph-a'),
+    graphB = document.querySelector('.chart__graph-b'),
+    graphC = document.querySelector('.chart__graph-c'),
+    graphD = document.querySelector('.chart__graph-d');
+
+  let maxNumber = Math.max(a, b, c, d);
+  let minNumber = Math.min(a, b, c, d);
+
+  let widthA = Math.round((a * 200) / maxNumber);
+  let widthB = Math.round((b * 200) / maxNumber);
+  let widthC = Math.round((c * 200) / maxNumber);
+  let widthD = Math.round((d * 200) / maxNumber);
+
+  graphA.style.width = `${widthA}px`;
+  graphB.style.width = `${widthB}px`;
+  graphC.style.width = `${widthC}px`;
+  graphD.style.width = `${widthD}px`;
+
+  const bgGray = '#747e9f';
+  const bgBlue = '#70F3F8';
+
+  switch (minNumber) {
+    case a:
+      graphA.style.backgroundColor = bgBlue;
+      graphB.style.backgroundColor = bgGray;
+      graphC.style.backgroundColor = bgGray;
+      graphD.style.backgroundColor = bgGray;
+      break;
+    case b:
+      graphA.style.backgroundColor = bgGray;
+      graphB.style.backgroundColor = bgBlue;
+      graphC.style.backgroundColor = bgGray;
+      graphD.style.backgroundColor = bgGray;
+      break;
+    case c:
+      graphA.style.backgroundColor = bgGray;
+      graphB.style.backgroundColor = bgGray;
+      graphC.style.backgroundColor = bgBlue;
+      graphD.style.backgroundColor = bgGray;
+      break;
+    case d:
+      graphA.style.backgroundColor = bgGray;
+      graphB.style.backgroundColor = bgGray;
+      graphC.style.backgroundColor = bgGray;
+      graphD.style.backgroundColor = bgBlue;
+      break;
+    default:
+      break;
+  }
+
 }
 
 const calculateAll = () => {
@@ -80,6 +149,7 @@ const calculateAll = () => {
   calculateBn();
   calculateSc();
   calculateVl();
+  createChart();
 }
 
 
