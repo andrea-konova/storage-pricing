@@ -15,7 +15,7 @@ const graphA = document.querySelector('.chart__graph-a'),
   graphC = document.querySelector('.chart__graph-c'),
   graphD = document.querySelector('.chart__graph-d');
 
-let a = 0, b = 0, c = 0, d = 0;
+let a, b, c, d;
 
 const checkStorageValue = () => {
   storageNumber.innerHTML = storageInput.value;
@@ -31,10 +31,10 @@ const calculateBb = () => {
 
   if (newPrice > minPrice) {
     bbPrice.innerHTML = newPrice;
-    a = newPrice;
+    a = Number(newPrice);
   } else {
     bbPrice.innerHTML = minPrice.toFixed(2);
-    a = minPrice;
+    a = Number(minPrice);
   }
 }
 
@@ -46,10 +46,10 @@ const calculateBn = () => {
 
   if (newPrice > maxPrice) {
     bnPrice.innerHTML = maxPrice.toFixed(2);
-    b = maxPrice.toFixed(2);
+    b = Number(maxPrice.toFixed(2));
   } else {
     bnPrice.innerHTML = newPrice;
-    b = newPrice;
+    b = Number(newPrice);
   }
 }
 
@@ -76,9 +76,9 @@ const calculateSc = () => {
   scPrice.innerHTML = newPrice;
 
   if (newPrice > 0) {
-    c = newPrice;
+    c = Number(newPrice);
   } else {
-    c = 0;
+    c = Number(0);
   }
 
 }
@@ -112,9 +112,13 @@ const createChart = () => {
 
 const paintChart = () => {
   let minNumber = Math.min(a, b, c, d);
+  console.log(typeof a);
+  console.log(typeof b);
+  console.log(typeof c);
+  console.log(typeof d);
 
   const bgGray = '#747e9f';
-  const bgBlue = '#70F3F8';
+  const bgBlue = '#D881F8';
 
   switch (minNumber) {
     case a:
@@ -124,7 +128,6 @@ const paintChart = () => {
       graphD.style.backgroundColor = bgGray;
       break;
     case b:
-      console.log(b);
       graphA.style.backgroundColor = bgGray;
       graphB.style.backgroundColor = bgBlue;
       graphC.style.backgroundColor = bgGray;
