@@ -112,10 +112,6 @@ const createChart = () => {
 
 const paintChart = () => {
   let minNumber = Math.min(a, b, c, d);
-  console.log(typeof a);
-  console.log(typeof b);
-  console.log(typeof c);
-  console.log(typeof d);
 
   const bgGray = '#747e9f';
   const bgBlue = '#D881F8';
@@ -150,6 +146,15 @@ const paintChart = () => {
   }
 }
 
+const rangeInput = () => {
+  for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
+    e.style.setProperty('--value', e.value);
+    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+  }
+}
+
 const calculateAll = () => {
   calculateBb();
   calculateBn();
@@ -164,6 +169,7 @@ window.addEventListener('DOMContentLoaded', () => {
   checkStorageValue();
   checkTransferValue();
   calculateAll();
+  rangeInput();
 });
 
 storageInput.addEventListener('input', () => {
@@ -179,11 +185,15 @@ transferInput.addEventListener('input', () => {
 bnInput.addEventListener('click', (e) => {
   if (e.target.className === 'input' || e.target.className === 'label') {
     calculateBn();
+    createChart();
+    paintChart();
   }
 });
 
 scInput.addEventListener('click',  (e) => {
   if (e.target.className === 'input' || e.target.className === 'label') {
     calculateSc();
+    createChart();
+    paintChart();
   }
 });

@@ -16,14 +16,14 @@
           <p class="item__name">Storage:</p>
           <span class="item__number"><span class="item__number-storage"></span> GB</span>
         </div>
-        <input type="range" id="storage-input" class="item__input" min="0" max="1000" step="1" value="100">
+        <input type="range" id="storage-input" class="item__input styled-slider slider-progress" min="0" max="1000" step="1" value="100">
       </div>
       <div class="price-form__item item">
         <div class="item__description">
           <p class="item__name">Transfer:</p>
           <span class="item__number"><span class="item__number-transfer"></span> GB</span>
         </div>
-        <input type="range" id="transfer-input" class="item__input" min="0" max="1000" step="1" value="400">
+        <input type="range" id="transfer-input" class="item__input styled-slider slider-progress" min="0" max="1000" step="1" value="400">
       </div>
     </div>
     <div class="price-result">
@@ -42,11 +42,11 @@
             <div class="company__name-input bn-input">
               <div class="input__wrap">
                 <input class="input" type="radio" id="HDD" name="storage-type" value="0.01" checked>
-                <label class="label" for="HDD">HDD</label>
+                <label class="radio-label" for="HDD">HDD</label>
               </div>
               <div class="input__wrap">
                 <input class="input" type="radio" id="SSD" name="storage-type" value="0.02">
-                <label class="label" for="SSD">SSD</label>
+                <label class="radio-label" for="SSD">SSD</label>
               </div>
             </div>
           </div>
@@ -60,11 +60,11 @@
             <div class="company__name-input sc-input">
               <div class="input__wrap">
                 <input class="input" type="radio" id="multi" name="type" value="0.06">
-                <label class="label" for="multi">Multi</label>
+                <label class="radio-label" for="multi">Multi</label>
               </div>
               <div class="input__wrap">
                 <input class="input" type="radio" id="single" name="type" value="0.03" checked>
-                <label class="label" for="single">Single</label>
+                <label class="radio-label" for="single">Single</label>
               </div>
             </div>
           </div>
