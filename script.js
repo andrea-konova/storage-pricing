@@ -10,6 +10,11 @@ const storageNumber = document.querySelector('.item__number-storage'),
   scInput = document.querySelector('.sc-input'),
   chartGraphs = document.querySelectorAll('.chart__graph');
 
+const graphA = document.querySelector('.chart__graph-a'),
+  graphB = document.querySelector('.chart__graph-b'),
+  graphC = document.querySelector('.chart__graph-c'),
+  graphD = document.querySelector('.chart__graph-d');
+
 let a = 0, b = 0, c = 0, d = 0;
 
 const checkStorageValue = () => {
@@ -92,13 +97,7 @@ const calculateVl = () => {
 }
 
 const createChart = () => {
-  const graphA = document.querySelector('.chart__graph-a'),
-    graphB = document.querySelector('.chart__graph-b'),
-    graphC = document.querySelector('.chart__graph-c'),
-    graphD = document.querySelector('.chart__graph-d');
-
   let maxNumber = Math.max(a, b, c, d);
-  let minNumber = Math.min(a, b, c, d);
 
   let widthA = Math.round((a * 200) / maxNumber);
   let widthB = Math.round((b * 200) / maxNumber);
@@ -109,6 +108,10 @@ const createChart = () => {
   graphB.style.width = `${widthB}px`;
   graphC.style.width = `${widthC}px`;
   graphD.style.width = `${widthD}px`;
+}
+
+const paintChart = () => {
+  let minNumber = Math.min(a, b, c, d);
 
   const bgGray = '#747e9f';
   const bgBlue = '#70F3F8';
@@ -121,6 +124,7 @@ const createChart = () => {
       graphD.style.backgroundColor = bgGray;
       break;
     case b:
+      console.log(b);
       graphA.style.backgroundColor = bgGray;
       graphB.style.backgroundColor = bgBlue;
       graphC.style.backgroundColor = bgGray;
@@ -141,7 +145,6 @@ const createChart = () => {
     default:
       break;
   }
-
 }
 
 const calculateAll = () => {
@@ -150,6 +153,7 @@ const calculateAll = () => {
   calculateSc();
   calculateVl();
   createChart();
+  paintChart();
 }
 
 

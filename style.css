@@ -87,9 +87,14 @@ input {
   display: flex;
   align-items: center;
 }
+.input__wrap {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
 .company__name-input label {
   font-size: 12px;
-  padding: 0 10px 0 5px;
+  padding-left: 5px;
 }
 .chart {
   display: flex;
@@ -113,6 +118,78 @@ input {
   padding: 0 10px;
   color: #d7e0ff;
 }
-#myChart {
-  transform: rotate(90deg);
+.bgGray {
+  background-color: #747e9f;
+}
+.bgBlue {
+  background-color: #70F3F8;
+}
+@media screen and ( max-width: 760px ) {
+  .container {
+    flex-direction: column-reverse;
+    width: 80%;
+    padding: 0 0 30px;
+  }
+  .title {
+    padding: 30px 0;
+    font-size: 24px;
+  }
+  .price-form {
+    flex-direction: column;
+  }
+  .item {
+    margin-top: 40px;
+    width: 300px;
+  }
+  .price-result {
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  .logos {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+  }
+  .company {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding: 10px 0 0;
+    width: 25%;
+  }
+  .company__name {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .company__name-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .chart {
+    transform: rotate(-90deg);
+    width: 350px;
+    height: 400px;
+  }
+  .chart__item-price {
+    padding: 0 0 0 10px;
+  }
+}
+@media screen and ( max-width: 576px ) {
+  .container {
+    width: 90%;
+  }
+  .logos {
+    width: 300px;
+  }
+  .chart {
+    width: 280px;
+    height: 300px;
+  }
+  .item {
+    width: 250px;
+  }
+  .company__name-item {
+    font-size: 14px;
+  }
 }
